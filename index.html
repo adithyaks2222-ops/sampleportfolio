@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>D'ignito 2K25 | Dragon's Forge - Marvel Fest</title>
+    <title>D'ignito 2K25 | Wavy Dots Nebula - Marvel Fest</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -112,7 +112,7 @@
             to { opacity: 1; transform: translateY(0) scale(1);}
         }
 
-        /* Hero Section with 3D canvas background */
+        /* Hero Section with 3D canvas background (Wavy Dots) */
         .hero-3d {
             position: relative;
             height: 70vh;
@@ -337,7 +337,7 @@
 <body>
 
 <nav>
-    <div class="logo"><i class="fas fa-dragon"></i> D'IGNITO 2K25</div>
+    <div class="logo"><i class="fas fa-dot-circle"></i> D'IGNITO 2K25</div>
     <div class="nav-links">
         <button id="nav-home">HOME</button>
         <button id="nav-login">LOGIN</button>
@@ -350,20 +350,20 @@
     <div class="hero-3d">
         <canvas id="three-canvas-bg"></canvas>
         <div class="hero-overlay">
-            <h1>🐉 RISE OF THE DRAGON 🐉</h1>
+            <h1>✨ WAVES OF DESTINY ✨</h1>
             <p>National Level Inter-Collegiate Fest | 9th & 10th October 2025 | Prizes worth ₹3.5 Lakhs</p>
-            <div style="margin-top: 20px;"><i class="fas fa-fire" style="color:#ff6600;"></i> Liquid Glass • 3D Dragon Familiar • Marvel Vibes</div>
+            <div style="margin-top: 20px;"><i class="fas fa-water" style="color:#00aaff;"></i> 3D Wavy Dots • Liquid Glass • Marvel Vibes</div>
         </div>
     </div>
 
     <div class="marquee-wrapper">
         <marquee behavior="scroll" direction="left" scrollamount="7">
-            🔥 EXCLUSIVE: 3D DRAGON FOLLOWS YOUR CURSOR! 🔥 REGISTER FOR FASHION SHOW, DANCE, CODING, GAMING, SHORT FILM 🔥 CASH PRIZES UP TO ₹25,000 🔥
+            🔥 3D WAVY PARTICLE NEBULA IN BACKGROUND! 🔥 REGISTER FOR FASHION SHOW, DANCE, CODING, GAMING, SHORT FILM 🔥 CASH PRIZES UP TO ₹25,000 🔥
         </marquee>
     </div>
 
     <div style="text-align: center;">
-        <h2 class="section-title"><i class="fas fa-meteor"></i> EPIC BATTLES • 5 CHALLENGES</h2>
+        <h2 class="section-title"><i class="fas fa-charging-station"></i> EPIC BATTLES • 5 CHALLENGES</h2>
     </div>
     <div class="events-grid" id="events-grid"></div>
     <p style="text-align:center; margin: 2rem 0;"><i class="fas fa-infinity"></i> Embrace the Liquid Glass Aesthetic • Hover over cards for Bat Curse</p>
@@ -372,11 +372,11 @@
 <!-- LOGIN PAGE -->
 <div id="login-page" class="page">
     <div class="form-container glass-card">
-        <h2><i class="fas fa-skull"></i> LOGIN TO DRAGON'S KEEP</h2>
+        <h2><i class="fas fa-skull"></i> LOGIN TO THE REALM</h2>
         <form id="login-form">
             <input type="email" id="login-email" placeholder="Hero@avengers.com" required>
-            <input type="password" id="login-password" placeholder="Asgardian Key" required>
-            <button type="submit">ENTER THE REALM</button>
+            <input type="password" id="login-password" placeholder="Infinity Key" required>
+            <button type="submit">ENTER THE WAVES</button>
         </form>
         <div class="switch-link">New Champion? <span id="goto-reg-from-login">Forge Account</span></div>
         <div id="login-message" class="message"></div>
@@ -399,7 +399,7 @@
                 <option>Battle Royale Bash (Gaming)</option>
                 <option>Short Film Making (5 Min Saga)</option>
             </select>
-            <button type="submit">⚡ REGISTER & CLAIM DRAGON ⚡</button>
+            <button type="submit">⚡ REGISTER & RIDE THE WAVE ⚡</button>
         </form>
         <div class="switch-link">Already a Warrior? <span id="goto-login-from-reg">Enter Here</span></div>
         <div id="register-message" class="message"></div>
@@ -407,21 +407,20 @@
 </div>
 
 <footer>
-    <p>© 2025 D'ignito | De Paul Institute of Science & Technology | Liquid Glass + 3D Dragon Familiar | Marvel Universe Theme</p>
+    <p>© 2025 D'ignito | De Paul Institute of Science & Technology | 3D Wavy Dots + Liquid Glass | Marvel Universe Theme</p>
 </footer>
 
 <script type="module">
     import * as THREE from 'three';
-    import { GLTFLoader } from 'https://unpkg.com/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
 
-    // --- 3D DRAGON THAT FOLLOWS CURSOR (using a 3D model dragon, but we'll create a stylized dragon group with wings + trail) ---
+    // --- 3D WAVY DOTS BACKGROUND (Attracting, flowing particle wave) ---
     const canvas3D = document.getElementById('three-canvas-bg');
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x03010a);
-    scene.fog = new THREE.FogExp2(0x03010a, 0.012);
+    scene.fog = new THREE.FogExp2(0x03010a, 0.008);
     
-    const camera = new THREE.PerspectiveCamera(45, canvas3D.parentElement.clientWidth / canvas3D.parentElement.clientHeight, 0.1, 1000);
-    camera.position.set(0, 3, 12);
+    const camera = new THREE.PerspectiveCamera(60, canvas3D.parentElement.clientWidth / canvas3D.parentElement.clientHeight, 0.1, 1000);
+    camera.position.set(0, 2, 14);
     camera.lookAt(0, 0, 0);
     
     const renderer = new THREE.WebGLRenderer({ canvas: canvas3D, alpha: false });
@@ -438,130 +437,151 @@
     window.addEventListener('resize', resizeCanvasBG);
     resizeCanvasBG();
     
-    // Lights
-    const ambient = new THREE.AmbientLight(0x331122);
-    scene.add(ambient);
-    const mainLight = new THREE.DirectionalLight(0xffaa77, 1.2);
-    mainLight.position.set(2, 5, 3);
-    scene.add(mainLight);
-    const backLight = new THREE.PointLight(0xe62429, 0.7);
-    backLight.position.set(-2, 2, -4);
-    scene.add(backLight);
-    const fillLight = new THREE.PointLight(0x2266ff, 0.5);
-    fillLight.position.set(1, 2, 4);
-    scene.add(fillLight);
+    // --- Create Wavy Particle System (Attracting dots that flow like a wave) ---
+    const PARTICLE_COUNT = 4500;
+    const positions = new Float32Array(PARTICLE_COUNT * 3);
+    const colorsArray = new Float32Array(PARTICLE_COUNT * 3);
     
-    // Create a stylized 3D Dragon using Group + custom geometry (dragon-like shape)
-    const dragonGroup = new THREE.Group();
+    // Store initial positions for wave animation
+    const initialX = new Array(PARTICLE_COUNT);
+    const initialY = new Array(PARTICLE_COUNT);
+    const initialZ = new Array(PARTICLE_COUNT);
     
-    // Body
-    const bodyGeo = new THREE.CylinderGeometry(0.45, 0.6, 1.2, 12);
-    const bodyMat = new THREE.MeshStandardMaterial({ color: 0xaa3322, emissive: 0x441100, metalness: 0.7, roughness: 0.3 });
-    const body = new THREE.Mesh(bodyGeo, bodyMat);
-    body.position.y = -0.2;
-    dragonGroup.add(body);
-    
-    // Head
-    const headGeo = new THREE.SphereGeometry(0.5, 24, 24);
-    const headMat = new THREE.MeshStandardMaterial({ color: 0xcc5533, emissive: 0x331100 });
-    const head = new THREE.Mesh(headGeo, headMat);
-    head.position.y = 0.5;
-    head.position.z = 0.4;
-    dragonGroup.add(head);
-    
-    // Horns
-    const hornGeo = new THREE.ConeGeometry(0.2, 0.7, 8);
-    const hornMat = new THREE.MeshStandardMaterial({ color: 0xdd8844 });
-    const hornL = new THREE.Mesh(hornGeo, hornMat);
-    hornL.position.set(-0.35, 0.85, 0.3);
-    const hornR = new THREE.Mesh(hornGeo, hornMat);
-    hornR.position.set(0.35, 0.85, 0.3);
-    dragonGroup.add(hornL, hornR);
-    
-    // Wings (dragon style)
-    const wingGeo = new THREE.BoxGeometry(0.9, 0.1, 0.5);
-    const wingMat = new THREE.MeshStandardMaterial({ color: 0xaa4422, emissive: 0x331100 });
-    const leftWing = new THREE.Mesh(wingGeo, wingMat);
-    leftWing.position.set(-0.9, 0.2, 0);
-    leftWing.rotation.z = -0.5;
-    const rightWing = new THREE.Mesh(wingGeo, wingMat);
-    rightWing.position.set(0.9, 0.2, 0);
-    rightWing.rotation.z = 0.5;
-    dragonGroup.add(leftWing, rightWing);
-    
-    // Tail
-    const tailGeo = new THREE.ConeGeometry(0.2, 0.9, 6);
-    const tail = new THREE.Mesh(tailGeo, bodyMat);
-    tail.position.set(0, -0.5, -0.7);
-    tail.rotation.x = 0.7;
-    dragonGroup.add(tail);
-    
-    // Eyes glow
-    const eyeMat = new THREE.MeshStandardMaterial({ color: 0xff3300, emissive: 0xff2200 });
-    const leftEye = new THREE.Mesh(new THREE.SphereGeometry(0.12, 16, 16), eyeMat);
-    leftEye.position.set(-0.2, 0.7, 0.75);
-    const rightEye = new THREE.Mesh(new THREE.SphereGeometry(0.12, 16, 16), eyeMat);
-    rightEye.position.set(0.2, 0.7, 0.75);
-    dragonGroup.add(leftEye, rightEye);
-    
-    scene.add(dragonGroup);
-    
-    // Particle trail for dragon (fireflies)
-    const particleCount = 300;
-    const particleGeometry = new THREE.BufferGeometry();
-    const particlePositions = new Float32Array(particleCount * 3);
-    for (let i = 0; i < particleCount; i++) {
-        particlePositions[i*3] = (Math.random() - 0.5) * 20;
-        particlePositions[i*3+1] = (Math.random() - 0.5) * 10;
-        particlePositions[i*3+2] = (Math.random() - 0.5) * 15 - 8;
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        // Distribute particles in a cylinder-like volume but with organic spread
+        const radius = 5.5;
+        const angle = Math.random() * Math.PI * 2;
+        const r = Math.sqrt(Math.random()) * radius;
+        const x = Math.cos(angle) * r * (Math.random() * 1.5);
+        const z = Math.sin(angle) * r * 1.2;
+        const y = (Math.random() - 0.5) * 7;
+        
+        initialX[i] = x;
+        initialY[i] = y;
+        initialZ[i] = z;
+        
+        positions[i*3] = x;
+        positions[i*3+1] = y;
+        positions[i*3+2] = z;
+        
+        // Colors: Marvel palette (red, gold, fiery orange, blue)
+        const colorChoice = Math.random();
+        let rCol, gCol, bCol;
+        if (colorChoice < 0.6) {
+            rCol = 0.9 + Math.random()*0.3; // red/orange
+            gCol = 0.2 + Math.random()*0.4;
+            bCol = 0.2 + Math.random()*0.3;
+        } else if (colorChoice < 0.8) {
+            rCol = 0.9; // gold
+            gCol = 0.7;
+            bCol = 0.1;
+        } else {
+            rCol = 0.2; // electric blue
+            gCol = 0.4;
+            bCol = 0.9;
+        }
+        colorsArray[i*3] = rCol;
+        colorsArray[i*3+1] = gCol;
+        colorsArray[i*3+2] = bCol;
     }
-    particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
-    const particleMatGlow = new THREE.PointsMaterial({ color: 0xff6633, size: 0.08, transparent: true, blending: THREE.AdditiveBlending });
-    const starField = new THREE.Points(particleGeometry, particleMatGlow);
-    scene.add(starField);
     
-    // Cursor tracking logic
+    const particleGeometry = new THREE.BufferGeometry();
+    particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
+    
+    // Create custom shader-like material or PointsMaterial with vertexColors
+    const particleMaterial = new THREE.PointsMaterial({ size: 0.12, vertexColors: true, blending: THREE.AdditiveBlending, transparent: true, opacity: 0.9 });
+    const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+    scene.add(particleSystem);
+    
+    // Add a second layer of tiny stars for depth
+    const starCount = 1500;
+    const starPositions = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+        starPositions[i*3] = (Math.random() - 0.5) * 80;
+        starPositions[i*3+1] = (Math.random() - 0.5) * 40;
+        starPositions[i*3+2] = (Math.random() - 0.5) * 50 - 30;
+    }
+    const starGeo = new THREE.BufferGeometry();
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    const starMat = new THREE.PointsMaterial({ color: 0x88aaff, size: 0.06, transparent: true, blending: THREE.AdditiveBlending });
+    const starsField = new THREE.Points(starGeo, starMat);
+    scene.add(starsField);
+    
+    // Dynamic lights for depth
+    const ambientLight = new THREE.AmbientLight(0x221122);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0xff4422, 0.8);
+    pointLight.position.set(2, 3, 5);
+    scene.add(pointLight);
+    const blueLight = new THREE.PointLight(0x2266ff, 0.5);
+    blueLight.position.set(-2, 1, 6);
+    scene.add(blueLight);
+    
+    // Animation variables for wavy motion (attracting wave)
+    let time = 0;
     let mouseX = 0, mouseY = 0;
-    let targetX = 0, targetY = 0;
+    let targetWarp = 0;
+    
     document.addEventListener('mousemove', (event) => {
-        // normalize mouse coordinates relative to screen width/height for smooth 3D space
         mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         mouseY = (event.clientY / window.innerHeight) * 2 - 1;
-        targetX = mouseX * 3.5;  // range -3.5 to 3.5 in X
-        targetY = -mouseY * 2.5; // range -2.5 to 2.5 in Y
+        targetWarp = (Math.abs(mouseX) + Math.abs(mouseY)) * 1.5;
     });
     
-    let currentX = 0, currentY = 0;
-    let timeAnim = 0;
+    // Smooth current warp
+    let currentWarp = 0;
     
-    // Animate Dragon + wings flapping
-    function animateDragon() {
-        requestAnimationFrame(animateDragon);
-        timeAnim += 0.025;
-        // Smooth follow cursor
-        currentX += (targetX - currentX) * 0.08;
-        currentY += (targetY - currentY) * 0.08;
-        dragonGroup.position.x = currentX;
-        dragonGroup.position.y = currentY + 0.5;
-        // Gentle rotation and wing flap
-        dragonGroup.rotation.z = Math.sin(timeAnim) * 0.15;
-        dragonGroup.rotation.x = Math.sin(timeAnim * 1.2) * 0.1;
-        leftWing.rotation.z = -0.5 + Math.sin(timeAnim * 4) * 0.4;
-        rightWing.rotation.z = 0.5 - Math.sin(timeAnim * 4) * 0.4;
-        // Eye glow pulse
-        const intensity = 0.8 + Math.sin(timeAnim * 8) * 0.4;
-        leftEye.material.emissiveIntensity = intensity;
-        rightEye.material.emissiveIntensity = intensity;
+    function animateWavyDots() {
+        requestAnimationFrame(animateWavyDots);
+        time += 0.012;
+        currentWarp += (targetWarp - currentWarp) * 0.05;
         
-        // Particle rotation
-        starField.rotation.y += 0.005;
-        starField.rotation.x = Math.sin(timeAnim * 0.1) * 0.1;
+        const positionsAttr = particleGeometry.attributes.position.array;
+        // Update each particle position with a beautiful wave equation + attraction effect
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            const ix = initialX[i];
+            const iy = initialY[i];
+            const iz = initialZ[i];
+            
+            // Create wave displacement using sine/cosine based on time and initial coordinates
+            const waveX = Math.sin(ix * 0.8 + time) * 0.25 * (1 + currentWarp * 0.5);
+            const waveY = Math.cos(iy * 0.7 + time * 1.2) * 0.3 * (1 + currentWarp * 0.4);
+            const waveZ = Math.sin((ix * 0.5 + iz * 0.6) * 0.9 + time * 1.5) * 0.2;
+            
+            // Attraction towards mouse influence (subtle drift)
+            const attractX = mouseX * 0.6 * Math.sin(time * 0.8) * 0.2;
+            const attractY = -mouseY * 0.5 * Math.cos(time * 0.7) * 0.2;
+            
+            let newX = ix + waveX + attractX;
+            let newY = iy + waveY + attractY;
+            let newZ = iz + waveZ + Math.sin(time * 0.9 + ix) * 0.15;
+            
+            // Keep within aesthetic bounds
+            positionsAttr[i*3] = newX;
+            positionsAttr[i*3+1] = newY;
+            positionsAttr[i*3+2] = newZ;
+        }
+        particleGeometry.attributes.position.needsUpdate = true;
         
-        camera.position.x += (currentX * 0.2 - camera.position.x) * 0.05;
-        camera.lookAt(currentX * 0.5, currentY * 0.5 + 0.5, 0);
+        // Rotate star field gently
+        starsField.rotation.y += 0.0005;
+        starsField.rotation.x = Math.sin(time * 0.1) * 0.1;
+        
+        // Dynamic camera subtle movement based on mouse for immersion
+        camera.position.x += (mouseX * 0.8 - camera.position.x) * 0.02;
+        camera.position.y += (-mouseY * 0.5 - camera.position.y) * 0.02;
+        camera.lookAt(0, 0, 0);
+        
+        // Pulse lights
+        const pulse = 0.6 + Math.sin(time * 2) * 0.2;
+        pointLight.intensity = 0.7 + Math.sin(time * 1.8) * 0.2;
+        blueLight.intensity = 0.4 + Math.cos(time * 1.2) * 0.2;
+        
         renderer.render(scene, camera);
     }
-    animateDragon();
+    
+    animateWavyDots();
     
     // --- BAT CURSOR FOR CARDS ---
     function applyBatCursor() {
@@ -573,13 +593,13 @@
         });
     }
     
-    // --- EVENTS DATA (5 events) ---
+    // --- EVENTS DATA (5 events with marvel flavor)---
     const eventsList = [
         { name: "FASHION SHOW", prize: "1st ₹25,000 | 2nd ₹15,000", icon: "fas fa-crown", desc: "Marvel Cosplay & Runway Rampage" },
-        { name: "GROUP DANCE", prize: "1st ₹15,000 | 2nd ₹10,000", icon: "fas fa-drumstick-bite", desc: "Superhero Symphonies" },
-        { name: "CODECRAFT", prize: "1st ₹6,000 | 2nd ₹4,000", icon: "fas fa-terminal", desc: "Debug like Tony Stark" },
+        { name: "GROUP DANCE", prize: "1st ₹15,000 | 2nd ₹10,000", icon: "fas fa-drumstick-bite", desc: "Superhero Symphonies & Cosmic Beats" },
+        { name: "CODECRAFT", prize: "1st ₹6,000 | 2nd ₹4,000", icon: "fas fa-terminal", desc: "Debug like Tony Stark, Algo Battle" },
         { name: "BATTLE ROYALE", prize: "1st ₹7,000 | 2nd ₹4,000", icon: "fas fa-robot", desc: "Gaming arena, last man standing" },
-        { name: "SHORT FILM", prize: "1st ₹5,000 | 2nd ₹3,000", icon: "fas fa-film", desc: "5 min Marvel fan-edition" }
+        { name: "SHORT FILM", prize: "1st ₹5,000 | 2nd ₹3,000", icon: "fas fa-film", desc: "5 min Marvel fan-edition or original" }
     ];
     
     function renderEventCards() {
@@ -609,7 +629,7 @@
                         break;
                     }
                 }
-                document.getElementById('register-message').innerHTML = `<span style="color:#ffcc00;">🐉 Dragon chosen for: ${eventName}</span>`;
+                document.getElementById('register-message').innerHTML = `<span style="color:#ffcc00;">✨ Wavy energy chosen for: ${eventName}</span>`;
             });
         });
         applyBatCursor();
@@ -629,7 +649,7 @@
     document.getElementById('goto-login-from-reg').onclick = () => showPage('login-page');
     
     // --- SIMPLE AUTH (localStorage) ---
-    if(!localStorage.getItem('dragon_users')) localStorage.setItem('dragon_users', JSON.stringify([]));
+    if(!localStorage.getItem('wavy_users')) localStorage.setItem('wavy_users', JSON.stringify([]));
     
     document.getElementById('register-form').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -641,14 +661,14 @@
             document.getElementById('register-message').innerHTML = "⚠️ All fields required, champion!";
             return;
         }
-        let users = JSON.parse(localStorage.getItem('dragon_users'));
+        let users = JSON.parse(localStorage.getItem('wavy_users'));
         if(users.find(u => u.email === email)) {
             document.getElementById('register-message').innerHTML = "⚠️ Email already exists! Enter the realm via login.";
             return;
         }
         users.push({ name, email, password: pwd, event: eventChoice });
-        localStorage.setItem('dragon_users', JSON.stringify(users));
-        document.getElementById('register-message').innerHTML = "✅ Forged in fire! Now login to awaken dragon.";
+        localStorage.setItem('wavy_users', JSON.stringify(users));
+        document.getElementById('register-message').innerHTML = "✅ Forged in waves! Now login to ride the energy.";
         document.getElementById('register-form').reset();
         setTimeout(() => showPage('login-page'), 1500);
     });
@@ -657,22 +677,22 @@
         e.preventDefault();
         const email = document.getElementById('login-email').value.trim();
         const pwd = document.getElementById('login-password').value;
-        const users = JSON.parse(localStorage.getItem('dragon_users'));
+        const users = JSON.parse(localStorage.getItem('wavy_users'));
         const user = users.find(u => u.email === email && u.password === pwd);
         if(user) {
-            document.getElementById('login-message').innerHTML = `🐉 Welcome ${user.name}! Your dragon awaits. Redirecting...`;
+            document.getElementById('login-message').innerHTML = `🌊 Welcome ${user.name}! The wavy dots dance for you. Redirecting...`;
             setTimeout(() => {
                 showPage('home-page');
                 document.getElementById('login-message').innerHTML = "";
                 document.getElementById('login-form').reset();
-                alert(`🔥 ${user.name}, the 3D dragon bows to you! 🔥`);
+                alert(`🔥 ${user.name}, the 3D particle wave obeys you! 🔥`);
             }, 1200);
         } else {
             document.getElementById('login-message').innerHTML = "❌ Invalid credentials or not registered. Join the festival!";
         }
     });
     
-    // Additional liquid glass effect mutation observer for dynamic cards
+    // Additional mutation observer for dynamic cards
     const observer = new MutationObserver(() => applyBatCursor());
     observer.observe(document.getElementById('events-grid'), { childList: true, subtree: true });
     applyBatCursor();
